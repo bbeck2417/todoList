@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Task from "./components/Task";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+  return <View style={styles.container}>
+    <View style={styles.tasksWrapper} />
+    <Text style={styles.sectionTitle}>Today's Tasks</Text>
+    <View style={styles.items}>
+      {/* This is where the tasks will go! */}
+      <Task text="Go for a walk" />
+      <Task text="Buy groceries" />
     </View>
-  );
+  </View>;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#E8EAED",
   },
+  tasksWrapper: {
+    paddingTop: 80,
+    paddingHorizontal: 20,
+  },
+sectionTitle: {
+  fontSize: 24,
+  fontWeight: "bold",
+  marginBottom: 20,
+  marginLeft: 20,
+},
+items: {
+  marginTop: 20,
+  marginLeft:15,
+  marginRight: 15,
+},
 });
